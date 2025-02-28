@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HeroHighlight } from "./ui/hero-highlight";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 import Image from "next/image";
@@ -10,8 +10,14 @@ import { useTheme } from "next-themes";
 import hero from "./images/pngwing.com (31).png";
 
 const Hero = () => {
-  const { theme } = useTheme(); // Detect current theme
-  const isDarkMode = theme === "dark";
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDarkMode = mounted && (theme === "dark" || resolvedTheme === "dark");
 
   const words = [
     { text: "Designing" },
@@ -27,7 +33,7 @@ const Hero = () => {
       <HeroHighlight className="flex justify-center items-center w-full">
         <div
           className={`flex flex-col items-center text-center mx-6 md:mx-20 lg:mx-40 ${
-            isDarkMode ? "text-white" : "text-gray-900"
+            isDarkMode ? "text-gray-100" : "text-gray-900"
           }`}
         >
           {/* Profile Image */}
@@ -46,7 +52,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className={`text-sm md:text-lg mt-4 font-light ${
-              isDarkMode ? "text-white" : "text-gray-800"
+              isDarkMode ? "text-gray-300" : "text-gray-800"
             }`}
           >
             Hi, I am
@@ -67,8 +73,8 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className={`text-lg md:text-2xl mt-2 lg:mt-3 font-extrabold  ${
-              isDarkMode ? "text-white/80" : "text-gray-700"
+            className={`text-lg md:text-2xl mt-2 lg:mt-3 font-extrabold ${
+              isDarkMode ? "text-gray-300" : "text-gray-700"
             }`}
           >
             Creative Frontend Developer
@@ -83,9 +89,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             href="https://drive.google.com/file/d/1j_Eor0DqrFM7fGEWSol-2VUnOOGjV22n/view?usp=sharing"
             transition={{ duration: 0.8, delay: 1.2 }}
-            className={`px-6 py-3 mt-6 rounded-lg ${isDarkMode ? "bg-white text-purple-950" : "bg-purple-950 text-white"}  font-semibold shadow-md transition duration-300 hover:bg-gray-200`}
+            className={`px-6 py-3 mt-6 rounded-lg ${
+              isDarkMode ? "bg-gray-800 text-white hover:bg-gray-600" : "bg-purple-950 text-white hover:bg-gray-700"
+            } font-semibold shadow-md transition duration-300`}
           >
-            Download my cv
+            Download my CV
           </motion.a>
         </div>
       </HeroHighlight>
