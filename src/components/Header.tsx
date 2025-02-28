@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   return (
     <div className="fixed top-0 left-0 w-full bg-purple-950 py-4 z-50 shadow-md">
       <nav className="text-white flex flex-row mx-[16px] md:mx-[60px] lg:mx-[120px] justify-between items-center h-[48px] md:h-[64px]">
-        <h1 className="cursor-pointer">G.toyo</h1>
+        <h1 className="cursor-pointer">G.adesanya</h1>
         <div className="hidden sm:flex flex-row w-[30%] justify-between">
           {["home", "portfolio",  "about", "contact"].map((section, index) => (
             <ScrollLink
