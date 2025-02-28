@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const projects = [
   {
@@ -31,7 +32,14 @@ const projects = [
 
 const Portfolio = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDarkMode = mounted && (theme === "dark" || resolvedTheme === "dark");
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
   };
@@ -41,7 +49,7 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="py-16 px-6 md:px-12 text-black relative">
+    <section className={`py-16 px-6 md:px-12 ${isDarkMode ? "text-white" : "text-black"} text- relative`}>
       {/* Section Heading */}
       <motion.h2
         className="text-center text-3xl md:text-5xl font-bold mb-8"
@@ -53,7 +61,7 @@ const Portfolio = () => {
       </motion.h2>
 
       <motion.p
-        className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-10"
+        className={`text-center text-lg ${isDarkMode ? "text-white/85" : "text-gray-600"}  max-w-3xl mx-auto mb-10`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}

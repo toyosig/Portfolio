@@ -1,10 +1,20 @@
 'use client';
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Lightbulb, Code, CheckCircle, Rocket } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const ProjectApproach = () => {
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDarkMode = mounted && (theme === "dark" || resolvedTheme === "dark");
+
   const steps = [
     {
       title: "Ideation & Planning",
@@ -41,10 +51,10 @@ const ProjectApproach = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+        <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold ${isDarkMode ? "text-white" : "text-black"} `}>
           My Project Approach
         </h2>
-        <p className="text-base sm:text-lg text-gray-600 mt-4">
+        <p className={`text-base sm:text-lg ${isDarkMode ? "text-white/85" : "text-gray-600"} mt-4`}>
           A structured and agile process to deliver exceptional results.
         </p>
       </motion.div>
