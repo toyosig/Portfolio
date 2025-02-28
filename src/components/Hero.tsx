@@ -67,14 +67,15 @@ const Hero = () => {
           <TypewriterEffect words={words} className="text-blue-500 text-lg md:text-xl" />
 
           {/* CTA Button */}
-          <motion.button
+          <motion.a
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            href="https://drive.google.com/file/d/1j_Eor0DqrFM7fGEWSol-2VUnOOGjV22n/view?usp=sharing"
             transition={{ duration: 0.8, delay: 1.2 }}
             className="px-6 py-3 mt-6 rounded-lg text-purple-950 bg-white font-semibold shadow-md transition duration-300 hover:bg-gray-200"
           >
             Download my cv
-          </motion.button>
+          </motion.a>
         </div>
       </HeroHighlight>
     </div>

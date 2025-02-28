@@ -1,10 +1,14 @@
-"use client"
+"use client";
 import React from "react";
-import { 
-  FaCss3, FaGitAlt, FaHtml5, FaJs, FaReact 
+import {
+  FaCss3,
+  FaGitAlt,
+  FaHtml5,
+  FaJs,
+  FaReact,
 } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiFramer, SiNextdotjs, SiReact, SiTypescript } from "react-icons/si";
+import { SiFramer, SiNextdotjs, SiReact, SiTypescript, SiJest, SiMocha } from "react-icons/si";
 
 export const Skills: React.FC = () => {
   return (
@@ -54,6 +58,14 @@ export const Skills: React.FC = () => {
             <li className="flex flex-col items-center gap-4">
               <SiFramer />
               <div>Framer Motion</div>
+            </li>
+            <li className="flex flex-col items-center gap-4">
+              <SiMocha />
+              <div>Mocha</div>
+            </li>
+            <li className="flex flex-col items-center gap-4">
+              <SiJest />
+              <div>Jest</div>
             </li>
           </ul>
         </div>
