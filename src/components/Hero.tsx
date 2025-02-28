@@ -5,10 +5,14 @@ import { HeroHighlight } from "./ui/hero-highlight";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 import hero from "./images/pngwing.com (31).png";
 
 const Hero = () => {
+  const { theme } = useTheme(); // Detect current theme
+  const isDarkMode = theme === "dark";
+
   const words = [
     { text: "Designing" },
     { text: "Intuitive" },
@@ -19,10 +23,13 @@ const Hero = () => {
   ];
 
   return (
-    <div className="w-full flex justify-center items-center font-serif ">
+    <div className="w-full flex justify-center items-center font-serif">
       <HeroHighlight className="flex justify-center items-center w-full">
-        <div className="flex flex-col items-center text-center text-white mx-6 md:mx-20 lg:mx-40">
-          
+        <div
+          className={`flex flex-col items-center text-center mx-6 md:mx-20 lg:mx-40 ${
+            isDarkMode ? "text-gray-900" : "text-white"
+          }`}
+        >
           {/* Profile Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -38,7 +45,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-sm md:text-lg mt-4 text-gray-300 font-light"
+            className={`text-sm md:text-lg mt-4 font-light ${
+              isDarkMode ? "text-gray-800" : "text-gray-300"
+            }`}
           >
             Hi, I am
           </motion.p>
@@ -58,7 +67,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-lg md:text-2xl mt-4 text-gray-200 font-extrabold"
+            className={`text-lg md:text-2xl mt-4 font-extrabold ${
+              isDarkMode ? "text-gray-800" : "text-gray-200"
+            }`}
           >
             Creative Frontend Developer
           </motion.h2>
@@ -72,7 +83,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             href="https://drive.google.com/file/d/1j_Eor0DqrFM7fGEWSol-2VUnOOGjV22n/view?usp=sharing"
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="px-6 py-3 mt-6 rounded-lg text-purple-950 bg-white font-semibold shadow-md transition duration-300 hover:bg-gray-200"
+            className={`px-6 py-3 mt-6 rounded-lg ${isDarkMode ? "bg-white text-purple-950" : "bg-purple-950 text-white"}  font-semibold shadow-md transition duration-300 hover:bg-gray-200`}
           >
             Download my cv
           </motion.a>

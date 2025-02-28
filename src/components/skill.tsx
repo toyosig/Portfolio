@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaCss3,
   FaGitAlt,
@@ -8,68 +9,65 @@ import {
   FaReact,
 } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiFramer, SiNextdotjs, SiReact, SiTypescript, SiJest, SiMocha } from "react-icons/si";
+import {
+  SiFramer,
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiJest,
+  SiMocha,
+} from "react-icons/si";
+
+const skills = [
+  { icon: <FaHtml5 />, name: "HTML" },
+  { icon: <FaCss3 />, name: "CSS" },
+  { icon: <FaJs />, name: "JavaScript" },
+  { icon: <FaReact />, name: "React" },
+  { icon: <SiReact />, name: "React Native" },
+  { icon: <SiNextdotjs />, name: "Next.js" },
+  { icon: <SiTypescript />, name: "TypeScript" },
+  { icon: <FaGitAlt />, name: "Git" },
+  { icon: <RiTailwindCssFill />, name: "Tailwind CSS" },
+  { icon: <SiFramer />, name: "Framer Motion" },
+  { icon: <SiMocha />, name: "Mocha" },
+  { icon: <SiJest />, name: "Jest" },
+];
 
 export const Skills: React.FC = () => {
   return (
-    <div className="w-full">
-      <div className="text-5xl md:text-6xl text-center flex justify-center py-16 font-bold">
+    <div className="w-full flex flex-col items-center py-16 px-6 md:px-20">
+      {/* Title */}
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl md:text-6xl font-bold text-center mb-10"
+      >
         Skills
-      </div>
-      <section className="grid grid-cols-2 gap-6 md:h-[30em] px-10 md:px-20 justify-center">
-        <div className="col-span-2 bg-purple-900 text-white p-8 py-10 md:p-20 h-fit rounded-2xl">
-          <ul className="text-lg md:text-3xl grid grid-cols-4 items-center gap-10">
-            <li className="flex flex-col items-center gap-4">
-              <FaHtml5 />
-              <div>HTML</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <FaCss3 />
-              <div>CSS</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <FaJs />
-              <div>JavaScript</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <FaReact />
-              <div>React</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <SiReact />
-              <div>React Native</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <SiNextdotjs />
-              <div>Next.js</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <SiTypescript />
-              <div>TypeScript</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <FaGitAlt />
-              <div>Git</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <RiTailwindCssFill />
-              <div>Tailwind CSS</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <SiFramer />
-              <div>Framer Motion</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <SiMocha />
-              <div>Mocha</div>
-            </li>
-            <li className="flex flex-col items-center gap-4">
-              <SiJest />
-              <div>Jest</div>
-            </li>
-          </ul>
-        </div>
-      </section>
+      </motion.h2>
+      
+      {/* Skills Container */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="bg-purple-900 text-white p-6 md:p-12 rounded-2xl w-full max-w-4xl"
+      >
+        <ul className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-lg md:text-2xl">
+          {skills.map((skill, index) => (
+            <motion.li
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex flex-col items-center gap-3"
+            >
+              <div className="text-5xl md:text-6xl">{skill.icon}</div>
+              <div>{skill.name}</div>
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
     </div>
   );
 };
