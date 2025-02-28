@@ -27,7 +27,7 @@ const Hero = () => {
       <HeroHighlight className="flex justify-center items-center w-full">
         <div
           className={`flex flex-col items-center text-center mx-6 md:mx-20 lg:mx-40 ${
-            isDarkMode ? "text-gray-900" : "text-white"
+            isDarkMode ? "text-white" : "text-gray-900"
           }`}
         >
           {/* Profile Image */}
@@ -46,7 +46,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className={`text-sm md:text-lg mt-4 font-light ${
-              isDarkMode ? "text-gray-800" : "text-gray-300"
+              isDarkMode ? "text-gray-300" : "text-gray-800"
             }`}
           >
             Hi, I am
@@ -75,7 +75,7 @@ const Hero = () => {
           </motion.h2>
 
           {/* Typewriter Effect */}
-          <TypewriterEffect words={words} className="text-blue-500 text-lg md:text-xl" />
+          <TypewriterEffect words={words} className="text-blue-500 mt-2 text-[16px] md:text-xl" />
 
           {/* CTA Button */}
           <motion.a
