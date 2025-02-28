@@ -34,7 +34,7 @@ const Header: React.FC = () => {
       </nav>
 
       {mobileMenuOpen && (
-        <div className="bg-purple-900 py-4 sm:hidden text-center">
+        <div className="bg-purple-900 py-4 sm:hidden text-white text-center">
           {["home", "portfolio", "about", "contact"].map((section, index) => (
             <ScrollLink
               key={index}
