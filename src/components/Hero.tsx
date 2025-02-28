@@ -26,7 +26,7 @@ const Hero = () => {
     <div className="w-full flex justify-center items-center font-serif">
       <HeroHighlight className="flex justify-center items-center w-full">
         <div
-          className={`flex flex-col items-center text-center mx-6 md:mx-20 lg:mx-40 ${
+          className={`flex flex-col items-center text-center mx-6 md:mx-20 lg:mx-40 text-white ${
             isDarkMode ? "text-white" : "text-gray-900"
           }`}
         >
@@ -45,8 +45,8 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className={`text-sm md:text-lg mt-4 font-light ${
-              isDarkMode ? "text-gray-300" : "text-gray-800"
+            className={`text-sm md:text-lg mt-4 font-light text-white ${
+              isDarkMode ? "text-white" : "text-gray-800"
             }`}
           >
             Hi, I am
@@ -67,15 +67,15 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className={`text-lg md:text-2xl mt-2 font-extrabold ${
-              isDarkMode ? "text-gray-200" : "text-gray-700"
+            className={`text-lg md:text-2xl mt-2 lg:mt-3 font-extrabold text-white/80 ${
+              isDarkMode ? "text-white" : "text-gray-700"
             }`}
           >
             Creative Frontend Developer
           </motion.h2>
 
           {/* Typewriter Effect */}
-          <TypewriterEffect words={words} className="text-blue-500 mt-2 text-[16px] md:text-xl" />
+          <TypewriterEffect words={words} className="text-blue-500 mt-2 lg:mt-0 text-[16px] md:text-xl" />
 
           {/* CTA Button */}
           <motion.a

@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const projects = [
   {
-    title: "church web  ",
+    title: "Church Web",
     description: "A church website for streaming live videos and reading morning devotions daily and sermon.",
     image: "/church.png",
     projectLink: "https://www.cacityofgod.com/",
@@ -15,7 +15,7 @@ const projects = [
   },
   {
     title: "Land Registry App",
-    description: "A decentralized land registry using Solidity, React, Tailwind CSS and network is sepolia eth.",
+    description: "A decentralized land registry using Solidity, React, Tailwind CSS, and Sepolia ETH.",
     image: "/land.png",
     projectLink: "https://omoabuleshowo.vercel.app/",
     githubLink: "https://github.com/toyosig/land",
@@ -41,7 +41,7 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="py-16 px-8 rounded-2xl  text-black relative">
+    <section className="py-16 px-6 md:px-12 text-black relative">
       {/* Section Heading */}
       <motion.h2
         className="text-center text-3xl md:text-5xl font-bold mb-8"
@@ -62,11 +62,11 @@ const Portfolio = () => {
       </motion.p>
 
       {/* Carousel Wrapper */}
-      <div className="relative w-full flex justify-center items-center">
+      <div className="relative flex justify-center items-center">
         {/* Previous Button */}
         <button
           onClick={prevSlide}
-          className="absolute left-0 md:-left-12 bg-gray-700 p-3 rounded-full hover:bg-gray-600 transition"
+          className="absolute top-1/2 transform -translate-y-1/2 left-2 md:left-4 lg:-left-12 bg-gray-700 p-3 rounded-full hover:bg-gray-600 transition"
         >
           <ChevronLeft className="w-6 h-6 text-white" />
         </button>
@@ -118,7 +118,7 @@ const Portfolio = () => {
         {/* Next Button */}
         <button
           onClick={nextSlide}
-          className="absolute right-0 md:-right-12 bg-gray-700 p-3 rounded-full hover:bg-gray-600 transition"
+          className="absolute top-1/2 transform -translate-y-1/2 right-2 md:right-4 lg:-right-12 bg-gray-700 p-3 rounded-full hover:bg-gray-600 transition"
         >
           <ChevronRight className="w-6 h-6 text-white" />
         </button>
