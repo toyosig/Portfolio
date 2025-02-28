@@ -9,8 +9,8 @@ const projects = [
   {
     title: "church web  ",
     description: "A church website for streaming live videos and reading morning devotions daily and sermon.",
-    image: "/wing.png",
-    projectLink: "https://your-project-link.com",
+    image: "/church.png",
+    projectLink: "https://www.cacityofgod.com/",
     githubLink: "https://github.com/yourusername/eprocurement",
   },
   {
