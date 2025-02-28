@@ -52,7 +52,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className={`text-sm md:text-lg mt-4 font-light ${
-              isDarkMode ? "text-gray-300" : "text-gray-800"
+              isDarkMode ? "text-gray-100" : "text-gray-800"
             }`}
           >
             Hi, I am
@@ -74,7 +74,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
             className={`text-lg md:text-2xl mt-2 lg:mt-3 font-extrabold ${
-              isDarkMode ? "text-gray-300" : "text-gray-700"
+              isDarkMode ? "text-gray-200" : "text-gray-700"
             }`}
           >
             Creative Frontend Developer
