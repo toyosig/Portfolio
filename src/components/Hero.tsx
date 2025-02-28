@@ -67,8 +67,8 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className={`text-lg md:text-2xl mt-4 font-extrabold ${
-              isDarkMode ? "text-gray-800" : "text-gray-200"
+            className={`text-lg md:text-2xl mt-2 font-extrabold ${
+              isDarkMode ? "text-gray-200" : "text-gray-700"
             }`}
           >
             Creative Frontend Developer
