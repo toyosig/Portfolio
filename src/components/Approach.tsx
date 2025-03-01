@@ -64,17 +64,17 @@ const ProjectApproach = () => {
         {steps.map((step, index) => (
           <motion.div
             key={index}
-            className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+            className={`flex items-start space-x-4 p-6 bg-white  ${isDarkMode ? "bg-gray-700" : "text-white"} rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             <div className="flex-shrink-0">{step.icon}</div>
             <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+              <h3 className={`text-lg sm:text-xl font-semibold  ${isDarkMode ? "text-white" : "text-black"}`}>
                 {step.title}
               </h3>
-              <p className="text-sm sm:text-base text-gray-600 mt-2">
+              <p className={`text-sm sm:text-base  ${isDarkMode ? "text-white/85" : "text-gray-600"} mt-2`}>
                 {step.description}
               </p>
             </div>
