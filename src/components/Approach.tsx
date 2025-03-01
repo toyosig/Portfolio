@@ -64,7 +64,7 @@ const ProjectApproach = () => {
         {steps.map((step, index) => (
           <motion.div
             key={index}
-            className={`flex items-start space-x-4 p-6 bg-white  ${isDarkMode ? "bg-gray-700" : "text-white"} rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1`}
+            className={`flex items-start space-x-4 p-6 ${isDarkMode ? "bg-gray-700" : "bg-white"} rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
