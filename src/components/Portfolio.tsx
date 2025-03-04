@@ -12,7 +12,20 @@ const projects = [
     description: "A church website for streaming live videos and reading morning devotions daily and sermon.",
     image: "/church.png",
     projectLink: "https://www.cacityofgod.com/",
-    githubLink: "https://github.com/yourusername/eprocurement",
+  },
+    {
+    title: "cogdevotional app",
+    description: "A devotional app that consist of bible, hymn, and devotional books where user can login and subscribe to read books. react native.",
+    image: "/app.jpg",
+    projectLink: "https://play.google.com/store/apps/details?id=com.gtoyo.Devotiona&pli=1",
+  },
+
+    {
+    title: "Student Mentor Web",
+    description: "A student mentorship app where student answer few questions and would be assigned to a mentor that matches their qualification. using react, tailwind, axios",
+    image: "/mentor.png",
+    projectLink: "https://counselor-weld.vercel.app/",
+    githubLink: "https://github.com/toyosig/counselor",
   },
   {
     title: "Land Registry App",
@@ -21,9 +34,23 @@ const projects = [
     projectLink: "https://omoabuleshowo.vercel.app/",
     githubLink: "https://github.com/toyosig/land",
   },
+    {
+    title: "BNStrading Web Platform",
+    description: "This is the ui of Btc trading plaform. using React tailwind and web3js",
+    image: "/coin.png",
+    projectLink: "https://coin-azure.vercel.app/",
+    githubLink: "https://github.com/toyosig/coin",
+  },
+    {
+    title: "Portfolio Web",
+    description: "This is a portfolio website using nextjs, typescript, tailwind css, framer motion, and threejs .",
+    image: "/portfolio.png",
+    projectLink: "https://www.cacityofgod.com/",
+    githubLink: "https://github.com/toyosig/portfolio",
+  },
   {
     title: "Junks",
-    description: "A fast food landing page to get the price of various fast food.",
+    description: "A fast food landing page to get the price of various fast food. using react and tailwind",
     image: "/junks.png",
     projectLink: "https://junks-eta.vercel.app/",
     githubLink: "https://github.com/toyosig/junks",
