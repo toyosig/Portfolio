@@ -45,7 +45,7 @@ const projects = [
     title: "Portfolio Web",
     description: "This is a portfolio website using nextjs, typescript, tailwind css, framer motion, and threejs .",
     image: "/portfolio.png",
-    projectLink: "https://www.cacityofgod.com/",
+    projectLink: "https://portfolio-h16x.vercel.app/",
     githubLink: "https://github.com/toyosig/portfolio",
   },
   {
